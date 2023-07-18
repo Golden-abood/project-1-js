@@ -35,37 +35,50 @@ body {
   border-radius: 50%;
   padding: 3px;
 }
-.container .content {
+.container .tasks {
   padding: 15px 20px;
   wdith: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.container .content h3 {
+.container .tasks h3 {
   margin: 0;
 }
-.container .content p {
+.container .tasks p {
   margin: 0;
   color: #666;
   font-size: 13px;
   font-weight: bold;
 }
-.container .content .put {
+.container .tasks .put {
   color: white;
   background-color: #4e5ac9;
   border-radius: 50%;
   padding: 5px;
 }
-.container .content .delete {
+.container .tasks .delete {
   color: white;
   background-color: #610003;
   border-radius: 50%;
   padding: 5px;
 }
-.container .content .check {
+.container .tasks .left {
+  display: flex;
+  gap: 20px;
+}
+.container .tasks .check {
   color: white;
   background-color: #008d17;
   border-radius: 50%;
   padding: 5px;
+}
+.container .tasks .cancel {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+}
+.done {
+  background-color: green
 }

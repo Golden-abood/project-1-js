@@ -15,6 +15,11 @@ let tasks = [
     isDone: true,
   },
 ];
+
+function getTaskStorage() {
+  tasks = JSON.parse(localStorage.getItem('tasks'))
+}
+getTaskStorage()
 // CRUD = {{ R }}
 
 function fetchData() {
@@ -57,6 +62,7 @@ document.querySelector(".button").addEventListener("click", function () {
     isDone: false,
   };
   tasks.push(newObject);
+  taskStorage()
   fetchData();
   console.log(newTitle);
   console.log(newObject);
@@ -64,6 +70,7 @@ document.querySelector(".button").addEventListener("click", function () {
 function toggle(index) {
   task = tasks[index];
   task.isDone = !task.isDone;
+  taskStorage() ;
   fetchData();
 }
 
@@ -73,6 +80,7 @@ function deleteTask(index) {
   let conf = confirm("Are you sure you want to delete");
   if (conf) {
     tasks.splice(index, 1);
+    taskStorage() 
   }
 
   fetchData();
@@ -84,5 +92,16 @@ function updateTask(index) {
   let task = tasks[index];
   console.log(task);
   task.title = NewTask;
+  taskStorage() ;
   fetchData();
 }
+
+
+// function Storage 
+function taskStorage() {
+  let taslString = JSON.stringify(tasks)
+  localStorage.setItem("tasks",taslString )
+  console.log(tasks) 
+}
+
+
